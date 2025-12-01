@@ -49,9 +49,14 @@ header {
 }
 
 .job-list {
-  flex: 1;             /* take up remaining space */
+  /* flex: 1;      */
+          /* take up remaining space */
   padding: 20px;
 }
+/* .info-ticket{
+  flex: 1;
+  padding: 20px;
+} */
 
 footer {
   background: #222;
@@ -62,4 +67,39 @@ footer {
 .logo-container{
   height: 200px;
   border-radius: 200px;
+}
+.status-board {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.ticket-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.ticket-info.completed {
+  background-color: #e0ffe0; /* light green */
+}
+
+.ticket-info.in-progress {
+  background-color: #fffbe0; /* light yellow */
+}
+
+.ticket-info.failed {
+  background-color: #ffe0e0; /* light red */
+}
+
+.ticket-image {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 8px;
+}
+.status-board{
+  flex:1;
+  align-items: end;
 }

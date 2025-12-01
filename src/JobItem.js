@@ -1,18 +1,10 @@
 import React from 'react';
 
-const JobItem = ({ job }) => {
-  // Conditional rendering based on job status
-  const statusStyle =
-    job.status === 'running'
-      ? { color: 'green', fontWeight: 'bold' }
-      : { color: 'gray', fontStyle: 'italic' };
-
+const JobItem = ({ job, onDelete }) => {
   return (
     <div className={`job-item ${job.status}`}>
-      <h3>{job.name}</h3>
-      <p style={statusStyle}>
-        Status: {job.status === 'running' ? ' Running' : ' Completed'}
-      </p>
+      <span>{job.name} ({job.status})</span>
+      <button onClick={() => onDelete(job.id)}>Delete</button>
     </div>
   );
 };
