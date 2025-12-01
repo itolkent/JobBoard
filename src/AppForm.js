@@ -26,14 +26,14 @@ function AppForm() {
     };
 
     //  Add new job
-    const addNewJob = (title) => {
+    const addNewJob = (jobDetails) => {
         const newJob = {
             id: Date.now(),
-            title,
-            status: "Need to Start",
+            ...jobDetails,
         };
-        setJobs((prevJobs) => [...prevJobs, newJob]);
+        setJobs((prev) => [...prev, newJob]);
     };
+
 
 
     // Filter jobs by status

@@ -22,7 +22,10 @@ function App() {
     <div className="app">
       <Header />
       <JobList jobs={jobs} onDeleteJob={handleDeleteJob} />
-      <AppForm />
+      <div className='appform-container'>
+
+        <AppForm />
+      </div>
       <StatusBoard />
       <Footer />
     </div>

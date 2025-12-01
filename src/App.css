@@ -32,14 +32,17 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 .app {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;   /* full viewport height */
+  min-height: 100vh;
+  /* full viewport height */
 }
 
 header {
@@ -51,16 +54,19 @@ header {
 .job-list {
   padding: 20px;
 }
+
 footer {
   background: #222;
   color: white;
   text-align: center;
   padding: 10px;
 }
-.logo-container{
+
+.logo-container {
   height: 200px;
   border-radius: 200px;
 }
+
 .status-board {
   display: flex;
   justify-content: space-around;
@@ -76,15 +82,18 @@ footer {
 }
 
 .ticket-info.completed {
-  background-color: #e0ffe0; /* light green */
+  background-color: #e0ffe0;
+  /* light green */
 }
 
 .ticket-info.in-progress {
-  background-color: #fffbe0; /* light yellow */
+  background-color: #fffbe0;
+  /* light yellow */
 }
 
 .ticket-info.failed {
-  background-color: #ffe0e0; /* light red */
+  background-color: #ffe0e0;
+  /* light red */
 }
 
 .ticket-image {
@@ -92,10 +101,12 @@ footer {
   height: 50px;
   margin-bottom: 8px;
 }
-.status-board{
-  flex:1;
+
+.status-board {
+  flex: 1;
   align-items: end;
 }
+
 .form-header {
   max-width: 600px;
   margin: 2rem auto;
@@ -106,7 +117,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .bot-input {
@@ -120,7 +131,7 @@ footer {
 
 .bot-input:focus {
   border-color: #0078d7;
-  box-shadow: 0 0 5px rgba(0,120,215,0.3);
+  box-shadow: 0 0 5px rgba(0, 120, 215, 0.3);
 }
 
 .form-details {
@@ -168,7 +179,7 @@ footer {
 
 .job-status:focus {
   border-color: #0078d7;
-  box-shadow: 0 0 5px rgba(0,120,215,0.3);
+  box-shadow: 0 0 5px rgba(0, 120, 215, 0.3);
 }
 
 .submit-data {
@@ -300,6 +311,7 @@ body.dark-mode .submit-data {
     width: 90%;
   }
 }
+
 .job-column {
   flex: 1;
   min-width: 250px;
@@ -355,4 +367,51 @@ body.dark-mode .submit-data {
 
 .delete-btn:hover {
   background: #d9363e;
+}
+
+.job-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 1rem auto;
+}
+
+.job-form input,
+.job-form textarea,
+.job-form select {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.job-form button {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.job-form button[type="submit"] {
+  background-color: #0078d7;
+  color: #fff;
+}
+
+.job-form button[type="submit"]:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+}
+
+.success-message {
+  color: green;
+  font-size: 0.9rem;
+}
+
+.appform-container {
+  padding: 10px;
 }
