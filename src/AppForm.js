@@ -5,6 +5,7 @@ import startIcon from "./img/itol.png";
 import progressIcon from "./img/itol.png";
 import completedIcon from "./img/itol.png";
 import JobForm from "./component/JobForm";
+import CategorySelector from "./component/CategorySelector";
 function AppForm() {
     const [jobs, setJobs] = useState([
         { id: 1, title: "Design homepage", status: "Need to Start" },
@@ -94,6 +95,7 @@ function AppForm() {
 
                 <button type="submit" className="submit-data">Submit</button>
             </form>
+          <CategorySelector/>
         </div>
 
     );
