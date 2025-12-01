@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;   /* full viewport height */
+}
+
+header {
+  background: #333;
+  color: white;
+  padding: 10px;
+}
+
+.job-list {
+  flex: 1;             /* take up remaining space */
+  padding: 20px;
+}
+
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
