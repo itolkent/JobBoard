@@ -1,27 +1,52 @@
-import React from "react";
+import React, { useState }  from "react";
+import JobColumn from "./component/JobColumn";
+// sample icons
+import startIcon from "./img/itol.png";
+import progressIcon from "./img/itol.png";
+import completedIcon from "./img/itol.png";
 
 function AppForm() {
-  return (
-    <form className="form-header">
-      <input type="text" className="bot-input" placeholder="Enter job title..." />
-      
-      <div className="form-details">
-        <div className="bottom-line">
-          <button type="button" className="tag">Frontend</button>
-          <button type="button" className="tag">Backend</button>
-          <button type="button" className="tag">Fullstack</button>
+    const [jobs, setJobs] = useState([
+        { id: 1, title: "Design homepage", status: "Need to Start" },
+        { id: 2, title: "Build login form", status: "In Progress" },
+        { id: 3, title: "Deploy to server", status: "Completed" },
+    ]);
+
+    // Filter jobs by status
+    const needToStartJobs = jobs.filter((job) => job.status === "Need to Start");
+    const inProgressJobs = jobs.filter((job) => job.status === "In Progress");
+    const completedJobs = jobs.filter((job) => job.status === "Completed");
+
+
+    return (
+        <div>
+            <div className="app-container">
+                <JobColumn title="Need to Start" image={startIcon} jobs={needToStartJobs} />
+                <JobColumn title="In Progress" image={progressIcon} jobs={inProgressJobs} />
+                <JobColumn title="Completed" image={completedIcon} jobs={completedJobs} />
+            </div>
+            <form className="form-header">
+                <input type="text" className="bot-input" placeholder="Enter job title..." />
+
+                <div className="form-details">
+                    <div className="bottom-line">
+                        <button type="button" className="tag">Frontend</button>
+                        <button type="button" className="tag">Backend</button>
+                        <button type="button" className="tag">Fullstack</button>
+                    </div>
+
+                    <select className="job-status">
+                        <option value="">Select status</option>
+                        <option value="open">Open</option>
+                        <option value="closed">Closed</option>
+                    </select>
+                </div>
+
+                <button type="submit" className="submit-data">Submit</button>
+            </form>
         </div>
 
-        <select className="job-status">
-          <option value="">Select status</option>
-          <option value="open">Open</option>
-          <option value="closed">Closed</option>
-        </select>
-      </div>
-
-      <button type="submit" className="submit-data">Submit</button>
-    </form>
-  );
+    );
 }
 
 export default AppForm;
